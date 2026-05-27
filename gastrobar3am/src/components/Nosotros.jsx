@@ -1,6 +1,11 @@
+import fondo from "../assets/fondo.jpeg";
+
+
 function Nosotros() {
   return (
-    <section id="nosotros" className="section">
+    <section id="nosotros" className="section" style={{
+            backgroundImage: `url(${fondo})`,
+          }}>
 
       <h2>Nosotros</h2>
 
