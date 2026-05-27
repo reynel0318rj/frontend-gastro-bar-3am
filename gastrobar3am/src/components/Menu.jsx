@@ -1,6 +1,10 @@
+import fondo from "../assets/LOGO 2.png";
+
 function Menu() {
   return (
-    <section id="menu" className="section">
+    <section id="menu" className="section" style={{
+                backgroundImage: `url(${fondo})`,
+              }}    >
 
       <h2>Menú</h2>
 
