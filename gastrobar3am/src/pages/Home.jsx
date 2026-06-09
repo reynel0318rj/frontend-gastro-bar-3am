@@ -5,7 +5,6 @@ import Eventos from "../components/Eventos";
 import Menu from "../components/Menu";
 import Contacto from "../components/Contanto";
 import Reservar from "../components/reservar";
-import Login from "../pages/login";
 
 function Home() {
   return (
@@ -17,7 +16,6 @@ function Home() {
       <Menu />
       <Reservar />
       <Contacto />
-      <Login />
     </>
   );
 }

@@ -1,5 +1,16 @@
+import { useState } from "react";
+import Login from "../pages/login";
+
 function Navbar() {
+  const [mostrarLogin, setMostrarLogin] = useState(false);
+
+  const abrirLogin = (e) => {
+    e.preventDefault();
+    setMostrarLogin(true);
+  };
+
   return (
+    <>
     <header className="navbar">
 
       <div className="logo">
@@ -29,6 +40,10 @@ function Navbar() {
             <a href="#contacto">Contacto</a>
           </li>
 
+          <li>
+            <a href="#admin" onClick={abrirLogin}>Admin</a>
+          </li>
+
         </ul>
       </nav>
 
@@ -39,6 +54,8 @@ function Navbar() {
       </a>
 
     </header>
+    <Login abierto={mostrarLogin} onCerrar={() => setMostrarLogin(false)} />
+    </>
   );
 }
 

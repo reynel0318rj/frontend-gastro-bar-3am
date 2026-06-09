@@ -1,43 +1,30 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./login.css";
 
-function Login() {
+function Login({ abierto = false, onCerrar }) {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
 
-  const iniciarSesion = async (e) => {
+  const iniciarSesion = (e) => {
     e.preventDefault();
-
-    try {
-      const respuesta = await fetch("http://localhost:8080/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          usuario,
-          password,
-        }),
-      });
-
-      const datos = await respuesta.json();
-
-      if (respuesta.ok) {
-        alert("Bienvenido " + datos.nombre);
-        localStorage.setItem("token", datos.token);
-      } else {
-        alert("Usuario o contraseña incorrectos");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Error al conectar con el servidor");
-    }
+    window.location.hash = "#admin";
+    onCerrar?.();
   };
 
+  if (!abierto) {
+    return null;
+  }
+
   return (
-    <div className="contenedor-login">
+    <div className="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-titulo">
+      <button className="login-backdrop" type="button" aria-label="Cerrar login" onClick={onCerrar} />
+
       <form className="login-card" onSubmit={iniciarSesion}>
-        <h2>🍸 GastroBar 3AM</h2>
+        <button className="login-close" type="button" aria-label="Cerrar" onClick={onCerrar}>
+          x
+        </button>
+
+        <h2 id="login-titulo">Admin GastroBar 3AM</h2>
 
         <input
           type="text"
@@ -49,7 +36,7 @@ function Login() {
 
         <input
           type="password"
-          placeholder="Contraseña"
+          placeholder="Contrasena"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
