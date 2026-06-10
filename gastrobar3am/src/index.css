@@ -150,6 +150,12 @@ a{
   margin:auto;
 }
 
+#nosotros .nosotros-texto{
+  color:#00f5ff;
+  text-shadow:0 3px 4px rgba(0,0,0,1),0 0 18px rgba(0,0,0,0.95);
+  font-weight:bold;
+}
+
 .cards{
   display:flex;
   justify-content:center;
@@ -172,6 +178,82 @@ a{
 .card h3{
   color:#d4af37;
   margin-bottom:20px;
+}
+
+.menu-section{
+  background-size:220px;
+  background-position:center top;
+  background-repeat:repeat;
+}
+
+.menu-publico{
+  display:grid;
+  gap:42px;
+}
+
+.menu-publico-categoria{
+  display:grid;
+  gap:20px;
+}
+
+.menu-publico-categoria h3{
+  color:#d4af37;
+  font-size:34px;
+}
+
+.menu-publico-productos{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:22px;
+}
+
+.menu-publico-card{
+  overflow:hidden;
+  background:rgba(17,17,17,0.94);
+  border:1px solid rgba(212,175,55,0.35);
+  border-radius:8px;
+  text-align:left;
+  box-shadow:0 18px 40px rgba(0,0,0,0.35);
+}
+
+.menu-publico-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  background:#101010;
+}
+
+.menu-publico-info{
+  display:grid;
+  gap:12px;
+  padding:18px;
+}
+
+.menu-publico-info div{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.menu-publico-info h4{
+  color:white;
+  font-size:21px;
+  line-height:1.2;
+}
+
+.menu-publico-info strong{
+  flex:0 0 auto;
+  color:#d4af37;
+  font-size:19px;
+}
+
+.menu-publico-info p{
+  color:#dddddd;
+  font-size:16px;
+  line-height:1.45;
+  max-width:none;
 }
 
 .contact-form{
@@ -199,4 +281,111 @@ a{
   border-radius:40px;
   font-size:20px;
   cursor:pointer;
+}
+
+.contacto-section{
+  background:#090909;
+}
+
+.redes-contacto{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.red-card{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-height:130px;
+  padding:24px;
+  background:#161616;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;
+  text-align:left;
+  transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;
+}
+
+.red-card:hover{
+  transform:translateY(-8px);
+  border-color:#d4af37;
+  box-shadow:0 18px 42px rgba(0,0,0,0.35);
+}
+
+.red-emblema{
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  color:white;
+  font-size:32px;
+  font-weight:bold;
+}
+
+.red-emblema img{
+  display:block;
+  width:30px;
+  height:30px;
+  object-fit:contain;
+}
+
+.red-card h3{
+  color:white;
+  font-size:24px;
+  margin-bottom:6px;
+}
+
+.red-card p{
+  color:#d4af37;
+  font-size:18px;
+  margin:0;
+}
+
+.facebook .red-emblema{
+  background:#1877f2;
+}
+
+.x .red-emblema{
+  background:#000000;
+  border:1px solid rgba(255,255,255,0.25);
+}
+
+.instagram .red-emblema{
+  background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+
+.tiktok .red-emblema{
+  background:linear-gradient(135deg,#25f4ee,#000000 45%,#fe2c55);
+}
+
+@media (max-width: 1000px){
+  .menu-publico-productos{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .redes-contacto{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 620px){
+  .section{
+    padding:100px 24px;
+  }
+
+  .menu-publico-productos{
+    grid-template-columns:1fr;
+  }
+
+  .menu-publico-info div{
+    flex-direction:column;
+  }
+
+  .redes-contacto{
+    grid-template-columns:1fr;
+  }
 }

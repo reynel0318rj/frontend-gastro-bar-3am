@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./login.css";
 
-function Login({ abierto = false, onCerrar }) {
+function Login({ abierto = false, onCerrar, titulo = "Admin GastroBar 3AM", destino = "#admin" }) {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
 
   const iniciarSesion = (e) => {
     e.preventDefault();
-    window.location.hash = "#admin";
+    window.location.hash = destino;
     onCerrar?.();
   };
 
@@ -24,7 +24,7 @@ function Login({ abierto = false, onCerrar }) {
           x
         </button>
 
-        <h2 id="login-titulo">Admin GastroBar 3AM</h2>
+        <h2 id="login-titulo">{titulo}</h2>
 
         <input
           type="text"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import Cliente from "./pages/Cliente";
 
 function App() {
   const [ruta, setRuta] = useState(window.location.hash);
@@ -17,6 +18,10 @@ function App() {
 
   if (ruta === "#admin") {
     return <Admin />;
+  }
+
+  if (ruta === "#cliente") {
+    return <Cliente />;
   }
 
   return <Home />;

@@ -2,12 +2,25 @@ import { useState } from "react";
 import Login from "../pages/login";
 
 function Navbar() {
-  const [mostrarLogin, setMostrarLogin] = useState(false);
+  const [loginActivo, setLoginActivo] = useState(null);
 
-  const abrirLogin = (e) => {
+  const abrirLogin = (e, tipo) => {
     e.preventDefault();
-    setMostrarLogin(true);
+    setLoginActivo(tipo);
   };
+
+  const loginConfig = {
+    admin: {
+      titulo: "Admin GastroBar 3AM",
+      destino: "#admin",
+    },
+    cliente: {
+      titulo: "Cliente GastroBar 3AM",
+      destino: "#cliente",
+    },
+  };
+
+  const configActual = loginActivo ? loginConfig[loginActivo] : null;
 
   return (
     <>
@@ -41,7 +54,11 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="#admin" onClick={abrirLogin}>Admin</a>
+            <a href="#cliente" onClick={(e) => abrirLogin(e, "cliente")}>Cliente</a>
+          </li>
+
+          <li>
+            <a href="#admin" onClick={(e) => abrirLogin(e, "admin")}>Admin</a>
           </li>
 
         </ul>
@@ -54,7 +71,12 @@ function Navbar() {
       </a>
 
     </header>
-    <Login abierto={mostrarLogin} onCerrar={() => setMostrarLogin(false)} />
+    <Login
+      abierto={Boolean(loginActivo)}
+      titulo={configActual?.titulo}
+      destino={configActual?.destino}
+      onCerrar={() => setLoginActivo(null)}
+    />
     </>
   );
 }
