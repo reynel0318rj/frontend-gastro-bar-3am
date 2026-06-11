@@ -152,6 +152,11 @@ function Cliente() {
         </button>
       </header>
 
+      <section className="cliente-bienvenida">
+        <strong>Bienvenido a la zona de clientes</strong>
+        <p>Explora nuestro menu, revisa tus reservas y guarda tus favoritos para tu proxima visita.</p>
+      </section>
+
       <section className="cliente-menu">
         <div className="cliente-menu-heading">
           <span>Menu disponible</span>
