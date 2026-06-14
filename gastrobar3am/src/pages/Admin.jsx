@@ -1,4 +1,5 @@
 import "./Admin.css";
+import { clearToken } from "../services/api";
 
 const resumen = [
   {
@@ -41,7 +42,7 @@ const reservas = [
 
 function Admin() {
   const cerrarSesion = () => {
-    localStorage.removeItem("token");
+    clearToken();
     window.location.hash = "#inicio";
   };
 
