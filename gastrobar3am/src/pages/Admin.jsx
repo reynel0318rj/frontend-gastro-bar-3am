@@ -57,10 +57,6 @@ function Admin() {
           <a href="#menu-admin">Menu</a>
           <a href="#eventos-admin">Eventos</a>
         </nav>
-
-        <button className="admin-logout" type="button" onClick={cerrarSesion}>
-          Cerrar sesion
-        </button>
       </aside>
 
       <section className="admin-content">
@@ -70,9 +66,14 @@ function Admin() {
             <h2>Panel de control</h2>
           </div>
 
-          <a className="admin-back" href="#inicio">
-            Volver al sitio
-          </a>
+          <div className="admin-header-actions">
+            <a className="admin-back" href="#inicio">
+              Volver al sitio
+            </a>
+            <button className="admin-logout" type="button" onClick={cerrarSesion}>
+              Cerrar sesión
+            </button>
+          </div>
         </header>
 
         <section id="panel" className="admin-summary">

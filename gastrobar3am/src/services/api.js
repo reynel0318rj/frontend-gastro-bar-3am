@@ -74,10 +74,39 @@ export function getTokenFromResponse(payload) {
   return payload?.token || payload?.accessToken || payload?.jwt || payload?.data?.token || null;
 }
 
+export function getRoleFromResponse(payload) {
+  return (
+    payload?.role ||
+    payload?.rol ||
+    payload?.tipo ||
+    payload?.user?.role ||
+    payload?.user?.rol ||
+    payload?.user?.tipo ||
+    payload?.data?.role ||
+    payload?.data?.rol ||
+    payload?.data?.tipo ||
+    null
+  );
+}
+
 export async function loginUser(credentials) {
   return apiFetch("/api/users/login", {
     method: "POST",
     auth: false,
     body: credentials,
+  });
+}
+
+export async function registerUser(userData) {
+  return apiFetch("/api/users/register", {
+    method: "POST",
+    auth: false,
+    body: userData,
+  });
+}
+
+export async function getMe() {
+  return apiFetch("/api/me", {
+    method: "GET",
   });
 }

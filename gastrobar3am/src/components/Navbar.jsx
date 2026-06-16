@@ -10,13 +10,15 @@ function Navbar() {
   };
 
   const loginConfig = {
-    admin: {
-      titulo: "Admin GastroBar 3AM",
-      destino: "#admin",
-    },
-    cliente: {
-      titulo: "Cliente GastroBar 3AM",
+    login: {
+      titulo: "Iniciar sesión GastroBar 3AM",
       destino: "#cliente",
+      modo: "login",
+    },
+    registro: {
+      titulo: "Registro GastroBar 3AM",
+      destino: "#cliente",
+      modo: "register",
     },
   };
 
@@ -54,11 +56,11 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="#cliente" onClick={(e) => abrirLogin(e, "cliente")}>Cliente</a>
+            <a href="#login" onClick={(e) => abrirLogin(e, "login")}>Ingresar</a>
           </li>
 
           <li>
-            <a href="#admin" onClick={(e) => abrirLogin(e, "admin")}>Admin</a>
+            <a href="#registro" onClick={(e) => abrirLogin(e, "registro")}>Registrarse</a>
           </li>
 
         </ul>
@@ -75,6 +77,7 @@ function Navbar() {
       abierto={Boolean(loginActivo)}
       titulo={configActual?.titulo}
       destino={configActual?.destino}
+      modo={configActual?.modo}
       onCerrar={() => setLoginActivo(null)}
     />
     </>

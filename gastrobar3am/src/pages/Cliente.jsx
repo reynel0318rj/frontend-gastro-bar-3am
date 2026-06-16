@@ -1,3 +1,4 @@
+import { clearToken } from "../services/api";
 import "./Cliente.css";
 
 const proximasReservas = [
@@ -136,6 +137,7 @@ const menuCategorias = [
 
 function Cliente() {
   const cerrarSesion = () => {
+    clearToken();
     window.location.hash = "#inicio";
   };
 

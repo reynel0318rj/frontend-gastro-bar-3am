@@ -42,6 +42,14 @@
   text-align: center;
 }
 
+.login-success {
+  margin: -10px 0 16px;
+  color: #9edb7f;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
 .login-card input {
   width: 100%;
   margin-bottom: 16px;
@@ -91,4 +99,24 @@
 .login-close:hover {
   color: #d4af37;
   border-color: #d4af37;
+}
+
+.login-toggle {
+  margin-top: 16px;
+  text-align: center;
+  color: #d4af37;
+  font-size: 14px;
+}
+
+.login-toggle button {
+  border: none;
+  background: none;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-toggle button:hover {
+  color: #f3d668;
 }
